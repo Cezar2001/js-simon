@@ -2,7 +2,7 @@ function getRandom (min, max) {
     return Math.round(Math.random() * (max - min)) + min;
 }
 
-let userNumber;
+let userNumber = [];
 let sum = ' ';
 const numbers = [];
 const output = document.querySelector('.output'); 
@@ -32,7 +32,7 @@ setTimeout (function() {
 
 setTimeout (function () {
     if (sum === numbers) {
-        output.innerHTML = 'Complimenti, i numeri da te inseriti sono corretti!!' + sum + numbers; 
+        output.innerHTML = 'Complimenti, i numeri da te inseriti sono corretti!!' + ' ' + 'Numeri precedentemente mostrati: ' + numbers + '!! Numeri da lei inseriti: ' + sum + '!!'; 
     } else {
         output.innerHTML = 'Spiacenti, i numeri da te inseriti sono errati!!' + ' ' + 'Numeri precedentemente mostrati: ' + numbers + '!! Numeri da lei inseriti: ' + sum + '!!'; 
     }
