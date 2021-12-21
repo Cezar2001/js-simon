@@ -15,36 +15,25 @@ while (numbers.length < 5) {
     }
 } 
 
-setTimeout (function () {
-    alert('Memorizza bene i seguenti numeri');
-    output.innerHTML = numbers; 
-}, 500);
+alert('Memorizza bene i seguenti numeri');
+output.innerHTML = numbers; 
+
 
 setTimeout (function() {
     output.innerHTML = '';
-}, 3000);
+}, 30000);
 
 setTimeout (function() {
     for (let i = 0; i < 5; i++) {
         userNumber = parseInt(prompt('Inserire uno dei numeri precedentemente visualizzati!'));
         if (numbers.includes(userNumber)) {
-            numbers.push(verificatedNumber);
+            verificatedNumber.push(userNumber);
         }
         sum += userNumber + ',';
     }
-}, 4000);
+}, 31000);
 
 setTimeout (function () {
-    if (sum === numbers) {
-        output.innerHTML = 'Complimenti, i numeri da te inseriti sono corretti!!' + ' ' + 'Numeri precedentemente mostrati: ' + numbers + '!! Numeri da lei inseriti: ' + sum + '!!' + 'Numeri indovinati: ' + verificatedNumber.length; 
-    } else {
-        output.innerHTML = 'Spiacenti, i numeri da te inseriti sono errati!!' + ' ' + 'Numeri precedentemente mostrati: ' + numbers + '!! Numeri da lei inseriti: ' + sum + '!!' + ' Numeri indovinati: ' + verificatedNumber.length; 
-    }
-}, 5000);
-
-// setTimeout (function () {
-//     if (numbers.includes(userNumber)) {
-//         numbers.push(userNumber)
-//     }
-// }, 6000);
+    output.innerHTML = 'Numeri precedentemente mostrati: ' + numbers + '!! Numeri da lei inseriti: ' + sum + '!!' + ' Numeri totali indovinati: ' + verificatedNumber.length + '! Questi sono: ' + verificatedNumber; 
+}, 31500);
 
