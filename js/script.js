@@ -2,6 +2,7 @@ function getRandom (min, max) {
     return Math.round(Math.random() * (max - min)) + min;
 }
 
+let verificatedNumber = [];
 let userNumber = [];
 let sum = ' ';
 const numbers = [];
@@ -26,21 +27,24 @@ setTimeout (function() {
 setTimeout (function() {
     for (let i = 0; i < 5; i++) {
         userNumber = parseInt(prompt('Inserire uno dei numeri precedentemente visualizzati!'));
+        if (numbers.includes(userNumber)) {
+            numbers.push(verificatedNumber);
+        }
         sum += userNumber + ',';
     }
 }, 4000);
 
 setTimeout (function () {
     if (sum === numbers) {
-        output.innerHTML = 'Complimenti, i numeri da te inseriti sono corretti!!' + ' ' + 'Numeri precedentemente mostrati: ' + numbers + '!! Numeri da lei inseriti: ' + sum + '!!'; 
+        output.innerHTML = 'Complimenti, i numeri da te inseriti sono corretti!!' + ' ' + 'Numeri precedentemente mostrati: ' + numbers + '!! Numeri da lei inseriti: ' + sum + '!!' + 'Numeri indovinati: ' + verificatedNumber.length; 
     } else {
-        output.innerHTML = 'Spiacenti, i numeri da te inseriti sono errati!!' + ' ' + 'Numeri precedentemente mostrati: ' + numbers + '!! Numeri da lei inseriti: ' + sum + '!!'; 
+        output.innerHTML = 'Spiacenti, i numeri da te inseriti sono errati!!' + ' ' + 'Numeri precedentemente mostrati: ' + numbers + '!! Numeri da lei inseriti: ' + sum + '!!' + ' Numeri indovinati: ' + verificatedNumber.length; 
     }
 }, 5000);
 
-setTimeout (function () {
-    if (numbers.includes(userNumber)) {
-        numbers.push(userNumber)
-    }
-}, 6000);
+// setTimeout (function () {
+//     if (numbers.includes(userNumber)) {
+//         numbers.push(userNumber)
+//     }
+// }, 6000);
 
