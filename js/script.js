@@ -38,3 +38,9 @@ setTimeout (function () {
     }
 }, 5000);
 
+setTimeout (function () {
+    if (numbers.includes(userNumber)) {
+        numbers.push(userNumber)
+    }
+}, 6000);
+
